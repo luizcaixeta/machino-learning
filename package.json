@@ -1,0 +1,21 @@
+{
+  "name": "machine-learning-logs",
+  "version": "1.0.0",
+  "description": "Blog Astro estático sobre machine learning com posts em MDX.",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "type": "module",
+  "dependencies": {
+    "@astrojs/mdx": "^4.3.12",
+    "astro": "^5.16.1",
+    "katex": "^0.16.9",
+    "rehype-katex": "^7.0.0",
+    "remark-math": "^6.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0"
+  }
+}

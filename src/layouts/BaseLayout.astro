@@ -1,0 +1,66 @@
+---
+interface Props {
+  title?: string;
+  variant?: "default" | "post";
+}
+
+const {
+  title = "ML_TERMINAL_V1.1",
+  variant = "default"
+} = Astro.props as Props;
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Estilos globais -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- KaTeX CSS para fórmulas matemáticas -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+    />
+  </head>
+  <body class="dark-mode">
+    <div class="crt-overlay"></div>
+    <div class="container">
+      <header>
+        <button id="theme-btn" class="theme-toggle-btn">[ SWITCH THEME ]</button>
+
+        {variant === "default" && (
+          <div>
+            <h1>
+              <span id="typewriter"></span><span class="cursor"> </span>
+            </h1>
+
+            <p class="subtitle">Explorando o caos dos dados.</p>
+          </div>
+        )}
+      </header>
+
+      <main>
+        <slot />
+      </main>
+
+      <footer>
+        <p>MACHINE LEARNING LOGS © 2024</p>
+        <div class="status-bar">
+          <span>MEM: 64K OK</span>
+          <span>TTY: 1</span>
+        </div>
+      </footer>
+    </div>
+
+    <script is:inline src="/script.js"></script>
+  </body>
+</html>
